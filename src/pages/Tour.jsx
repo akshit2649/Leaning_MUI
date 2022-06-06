@@ -4,6 +4,9 @@ import { Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import ImageCollage from '../components/ImageCollage';
 import CustomizedAccordions from '../components/Accordian';
+import Paper from '@mui/material/Paper';
+import BottomNavigation from '@mui/material/BottomNavigation';
+import BasicModal from '../components/Modal';
 
 const Tour = () => {
   return (
@@ -30,12 +33,17 @@ const Tour = () => {
           adipisci iste quaerat.
         </Typography>
       </Box>
-      <Box>
+      <Box marginBottom={10}>
         <Typography variant="h6" component="h4" marginTop={3} marginBottom={2}>
           Frequently Asked Questions
         </Typography>
         <CustomizedAccordions />
       </Box>
+      <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
+        <BottomNavigation>
+          <BasicModal />
+        </BottomNavigation>
+      </Paper>
     </Container>
   );
 };
