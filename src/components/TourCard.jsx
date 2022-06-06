@@ -32,38 +32,34 @@ const theme = createTheme({
   },
 });
 
-const TourCard = () => {
+const TourCard = ({ tour }) => {
   return (
     <Grid item xs={3}>
       <ThemeProvider theme={theme}>
         <Paper elevation={3}>
-          <img
-            src="https://www.worldatlas.com/upload/bf/b2/20/edward-koorey-gcc3c6mfsm0-unsplash.jpg"
-            alt=""
-            className="img"
-          />
+          <img src={tour.image} alt="" className="img" />
           <Box paddingX={1}>
             <Typography component="h2" variant="subtitle1">
-              Immerse into the fall
+              {tour.name}
             </Typography>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
               <AccessTime sx={{ width: 12.5 }} />
               <Typography variant="body2" component="p" marginLeft={0.5}>
-                5 Hours
+                {tour.duration} Hours
               </Typography>
             </Box>
             <Box sx={{ display: 'flex', alignItems: 'center' }} marginTop={3}>
-              <Rating name="read-only" value={4.5} size="small" readOnly precision={0.5} />
+              <Rating name="read-only" value={tour.rating} size="small" readOnly precision={0.5} />
               <Typography variant="body2" component="p" marginLeft={0.5}>
-                4.5
+                {tour.rating}
               </Typography>
               <Typography variant="body3" component="p" marginLeft={1.5}>
-                (655 Reviews)
+                ({tour.numberOfReviews} Reviews)
               </Typography>
             </Box>
             <Box>
               <Typography variant="h6" component="h3" marginLeft={0}>
-                From Rs. 1477/-
+                From Rs. {tour.price}/-
               </Typography>
             </Box>
           </Box>
